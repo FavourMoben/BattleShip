@@ -57,7 +57,7 @@
               <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
               <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
               <addClasspath>true</addClasspath>
-              <mainClass>CS2020.assignment1.game.RunGame</mainClass>
+              <mainClass>CS2020.assignment1.game.GameGrid</mainClass>
             </manifest>
           </archive>
         </configuration>

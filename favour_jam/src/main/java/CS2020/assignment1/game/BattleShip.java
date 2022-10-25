@@ -16,7 +16,6 @@ public class BattleShip extends AbstractBattleShip {
     }
     @Override 
     public boolean checkAttack (int row,int column){
-        System.out.println(this.shipCoordinates.length);
         for (int i=0; i<this.shipCoordinates.length;i++) {
             for (int j=1; j<this.shipCoordinates[0].length;j++){
                 if (this.shipCoordinates[i][j-1] == row && this.shipCoordinates[i][j] == column) {
