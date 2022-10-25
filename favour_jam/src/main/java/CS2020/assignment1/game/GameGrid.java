@@ -6,7 +6,10 @@ public class GameGrid extends AbstractGameGrid {
     private int height;
     private int numberOfShips;
     public static void main(String[] args) {
-        GameGrid grid = new GameGrid(10,10,4);
+        GameGrid grid = new PlayerGameGrid(10,10,4);
+        ((PlayerGameGrid) grid).printGrid();
+        GameGrid grid2 = new OpponentGameGrid(10,10,4);
+        ((OpponentGameGrid) grid2).printGrid();
     }
 	GameGrid (int width,int height,int numberOfShips) {
         this.width = width;
@@ -18,7 +21,7 @@ public class GameGrid extends AbstractGameGrid {
         for (AbstractBattleShip ship: ships) {
             placeShip(ship);
         }
-        printGrid();
+        // printGrid();
     }
     //populate the grid with "." characters
     @Override
@@ -40,7 +43,6 @@ public class GameGrid extends AbstractGameGrid {
             ship.shipCoordinates = new int [3][2];
             ship.shipCoordinates[0][0] = randPosX;
             ship.shipCoordinates[0][1] = randPosY;
-            System.out.println(ship.shipOrientation);
             if (ship.getShipOrientation().equals("vertical")) {
                 for (int i=1; i<=2;i++) {
                     // x = previousX + 1 or previousX - 1 depending on its position
@@ -96,7 +98,7 @@ public class GameGrid extends AbstractGameGrid {
             gameGrid[x][y] = "*";
         }        
     }
-    private void printGrid() {
+    public void printGrid() {
         for (String[] array : gameGrid) {
             String output = "";
             for (String str : array) {

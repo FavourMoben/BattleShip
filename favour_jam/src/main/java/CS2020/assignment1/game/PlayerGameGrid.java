@@ -1,11 +1,12 @@
 package CS2020.assignment1.game;
-public PlayerGameGrid extends GameGrid {
-    PlayerGameGrid() {
-
+public class PlayerGameGrid extends GameGrid {
+    PlayerGameGrid(int width,int height,int numberOfShips){
+        super(width,height,numberOfShips);
     }
+
     @Override
-    private void printGrid(GameGrid gameGrid,String name) {
-        System.out.printf("%s's Grid: \n",name);
+    public void printGrid() {
+        System.out.println("player's grid: ");
         for (String[] array : gameGrid) {
             String output = "";
             for (String str : array) {
