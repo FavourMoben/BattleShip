@@ -5,12 +5,6 @@ public class GameGrid extends AbstractGameGrid {
     private int width;
     private int height;
     private int numberOfShips;
-    public static void main(String[] args) {
-        GameGrid grid = new PlayerGameGrid(10,10,4);
-        ((PlayerGameGrid) grid).printGrid();
-        GameGrid grid2 = new OpponentGameGrid(10,10,4);
-        ((OpponentGameGrid) grid2).printGrid();
-    }
 	GameGrid (int width,int height,int numberOfShips) {
         this.width = width;
         this.height = height;
@@ -21,7 +15,6 @@ public class GameGrid extends AbstractGameGrid {
         for (AbstractBattleShip ship: ships) {
             placeShip(ship);
         }
-        // printGrid();
     }
     //populate the grid with "." characters
     @Override

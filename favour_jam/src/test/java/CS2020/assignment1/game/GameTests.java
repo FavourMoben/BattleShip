@@ -4,9 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/*
 import CS2020.assignment1.game.AbstractGameGrid;
 import CS2020.assignment1.game.BattleShip;
-/*
 import CS2020.assignment1.game.Game;
 import CS2020.assignment1.game.GameControls;
 import CS2020.assignment1.game.GameGrid;
@@ -369,7 +369,7 @@ public class GameTests {
 	    }	
 		
 	}
-	/* 
+	
 	@Test
 	public void t3_1() {
 	       
@@ -437,8 +437,7 @@ public class GameTests {
 	        fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+"T3.3: Something is wrong. Is your check victory method working? Check the code of this test for hints on the expected behaviour.    "+ ANSI_RESET+ e);
 	    }	
 			
-	}
-			
+		}	
 			@Test
 			public void t3_4() {
 			       
@@ -519,5 +518,4 @@ public class GameTests {
 			    }	
 		
 	}
-*/
 }
