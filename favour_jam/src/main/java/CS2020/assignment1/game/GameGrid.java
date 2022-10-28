@@ -40,7 +40,7 @@ public class GameGrid extends AbstractGameGrid {
                 for (int i=1; i<=2;i++) {
                     // x = previousX + 1 or previousX - 1 depending on its position
                     int newX = ship.shipCoordinates[i - 1][0] + 1;
-                    if (randPosX > this.width - 2) newX = ship.shipCoordinates[i - 1][0] - 1;
+                    if (randPosX > this.width - 3) newX = ship.shipCoordinates[i - 1][0] - 1;
                     // y = y
                     int newY = ship.shipCoordinates[i - 1][1];
                     ship.shipCoordinates[i][0] = newX;
@@ -53,7 +53,7 @@ public class GameGrid extends AbstractGameGrid {
                     int newX = ship.shipCoordinates[i - 1][0];
                     // y = previousY + 1 or previousY - 1 depending on its location
                     int newY = ship.shipCoordinates[i - 1][1] + 1;
-                    if (randPosY > this.height - 2){
+                    if (randPosY > this.height - 3){
                         newY = ship.shipCoordinates[i - 1][1] - 1;
                     }
                     ship.shipCoordinates[i][0] = newX;
@@ -77,12 +77,13 @@ public class GameGrid extends AbstractGameGrid {
 
     }
     private boolean isEmptySpace(int [][] coordinates) {
+        boolean isEmpty = true;
         for (int [] cor: coordinates){
             int x = cor[0];
             int y = cor[1];
-            return gameGrid[x][y].equals("*") ? false : true;
+            isEmpty = gameGrid[x][y].equals("*") ? false : true;
         } 
-        return true; 
+        return isEmpty; 
     }
     private void updateGrid(int [][] coordinates){
         for (int [] cor: coordinates){
