@@ -1,29 +1,22 @@
 package CS2020.assignment1.game;
 import java.util.Random;
+
 public class BattleShip extends AbstractBattleShip {
-
-    private int boardWidth = 5, boardHeight = 7; 
-
+    private int randomInt = new Random().nextInt(2);
     BattleShip(String name) {
-        int randomInt = new Random().nextInt(2);
         this.name = name;
         this.shipOrientation = randomInt == 1 ? "horizontal" : "vertical";
         this.hits = 0;
         
     }
-    private int randint(int minn,int maxx) {
-        return (int) (Math.random() * maxx) + minn;
-    }
     @Override 
     public boolean checkAttack (int row,int column){
-        for (int i=0; i<this.shipCoordinates.length;i++) {
-            for (int j=1; j<this.shipCoordinates[0].length;j++){
-                if (this.shipCoordinates[i][j-1] == row && this.shipCoordinates[i][j] == column) {
-                    if (this.hits < 3) {
-                        this.hits++;
-                        return true;
-                    }
-                }
+        for (int [] coors:this.shipCoordinates) {
+            Integer x = new Integer(coors[0]);
+            Integer y = new Integer(coors[1]);
+            if (x.equals(row) && y.equals(column) && this.hits < 3) {
+                this.hits++;
+                return true;
             }
         }
         return false;

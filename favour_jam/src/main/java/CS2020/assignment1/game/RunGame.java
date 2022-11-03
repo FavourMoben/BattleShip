@@ -10,7 +10,7 @@ public class RunGame {
             Game game = new Game(width,height, numberOfShips);
             boolean gameIsRunning = true;
             while (gameIsRunning){
-                System.out.println("Please enter a position you wish to attack: ");
+                System.out.println("Please enter a position you wish to attack:\n ");
                 String input = new Scanner(System.in).next().trim();
                 if (input.equals("exit")){ 
                     game.exitGame(input);
@@ -21,7 +21,7 @@ public class RunGame {
                 gameIsRunning = gameEnded ? false : true;
             }
         }catch (Exception e) {
-            System.out.println("Wrong input !! Or no arguments passed");
+            System.out.println("Incorrect input!! Or no arguments passed");
         }
     }
 }

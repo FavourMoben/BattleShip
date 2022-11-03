@@ -33,29 +33,33 @@ public class GameGrid extends AbstractGameGrid {
         while(true){
             int randPosX = new Random().nextInt(this.width-2);
             int randPosY = new Random().nextInt(this.height-2);
-            ship.shipCoordinates = new int [3][2];
+            int rows = 3; // 3 rows 
+            int columns = 2; // 2 columns
+            ship.shipCoordinates = new int [rows][columns];
             ship.shipCoordinates[0][0] = randPosX;
             ship.shipCoordinates[0][1] = randPosY;
             if (ship.getShipOrientation().equals("vertical")) {
                 for (int i=1; i<=2;i++) {
                     // x = previousX + 1 or previousX - 1 depending on its position
-                    int newX = ship.shipCoordinates[i - 1][0] + 1;
-                    if (randPosX > this.width - 3) newX = ship.shipCoordinates[i - 1][0] - 1;
-                    // y = y
-                    int newY = ship.shipCoordinates[i - 1][1];
+                    int prevX = ship.shipCoordinates[i - 1][0];
+                    int prevY = ship.shipCoordinates[i - 1][1];
+
+                    int newX = randPosX > this.width - 3 ? prevX - 1  : prevX + 1;
+                    int newY = prevY;
+
                     ship.shipCoordinates[i][0] = newX;
                     ship.shipCoordinates[i][1] = newY;
                 }
             }
             else {
                 for (int i=1; i<=2;i++) {
+                    int prevX = ship.shipCoordinates[i - 1][0];
+                    int prevY = ship.shipCoordinates[i - 1][1];
                     // x = x
-                    int newX = ship.shipCoordinates[i - 1][0];
                     // y = previousY + 1 or previousY - 1 depending on its location
-                    int newY = ship.shipCoordinates[i - 1][1] + 1;
-                    if (randPosY > this.height - 3){
-                        newY = ship.shipCoordinates[i - 1][1] - 1;
-                    }
+                    int newX = prevX;
+                    int newY = randPosY > this.height - 3 ? prevY - 1: prevY + 1;
+                    
                     ship.shipCoordinates[i][0] = newX;
                     ship.shipCoordinates[i][1] = newY;
                 }

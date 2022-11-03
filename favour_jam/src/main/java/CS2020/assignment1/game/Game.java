@@ -27,8 +27,8 @@ public class Game implements GameControls {
                 for (int[] coors: shipCoordinates) {
                     int shipX = coors[0];
                     int shipY = coors[1];
-                    if (xInput.equals(shipX) && yInput.equals(shipY)) {
-                        ship.setHits(ship.getHits() + 1);
+                    if (ship.checkAttack(xInput,yInput)) {
+                        // ship.setHits(ship.getHits() + 1);
                         this.opponent.gameGrid[shipX][shipY] = "X";
                         foundCoordinate = true;
                         message = "HIT " + ship.getName() + "!!!";
@@ -50,8 +50,8 @@ public class Game implements GameControls {
                 for (int[] coors: shipCoordinates) {
                     int shipX = coors[0];
                     int shipY = coors[1];
-                    if (oppX.equals(shipX) && oppY.equals(shipY)) {
-                        ship.setHits(ship.getHits() + 1);
+                    if (ship.checkAttack(oppX,oppY)) {
+                        // ship.setHits(ship.getHits() + 1);
                         this.player.gameGrid[shipX][shipY] = "X";
                         foundCoordinate = true;
                         message = "HIT " + ship.getName() + "!!!";
@@ -66,7 +66,7 @@ public class Game implements GameControls {
             this.opponent.printGrid();
         }
         catch (Exception | Error e) {
-            System.out.println("wrong Input! ");
+            System.out.println("Incorrect input! try again ");
             }
     }
     
