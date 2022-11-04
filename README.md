@@ -1,15 +1,30 @@
-### What is this?
-This is the starter code for you to use in your CS2020 Battleship Game Coding Assignment.
-See the full instructions in the accompanying PDF file.
+# How to Run/Play **Battle Ship** Game
+-----------------------------------------
+how to run the game
+-------------------
+**Type this on terminal**
+```terminal
 
-### Rename the folder
-You'll see the 'rename_student_name' folder in the tree on the left.
-Rename the folder as your firstName_lastName
+>cd Assigment1/
+>java -jar assignment1-1.0-SNAPSHOT.jar width height numberOfships
+```
+then ...
+--------
+if you don't find the "assignment1-1.0-SNAPSHOT.jar" file, 
+**Type this on terminal**
 
-### How do I submit this when I'm done?
-Before you're done, generate a Git log file, which will show your commits by running this command:
-git log --date=local --pretty=format:"%h%x09%an%x09%ad%x09%s" > commits.local.tsv.txt 
+```terminal
 
-Move the 'complete' slider to show you're done when you're ready to finish.
+>cd Assigment1/Favour_Jam
+>mvn package
+>cd target
+>java -jar assignment1-1.0-SNAPSHOT.jar width height numberOfships
+```
+how to run the test 
+-------------------
+**Type this on terminal**
+```terminal
 
-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
+>cd Assigment1/Favour_Jam 
+>mvn clean test
+```
